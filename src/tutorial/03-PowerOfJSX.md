@@ -9,12 +9,12 @@ For example lets imagine we want to display a company profile information and a 
 ```jsx
 function CompanyProfile(props) {
     //ticker and companyProfileInfo stored in a variable
-    const ticker = 'APPL';
+    const ticker = 'AAPL';
     const companyProfileInfo = {
         'Company Name': 'Apple Inc.',
-        'Exchange': "Nasdaq",
+        'Exchange': 'Nasdaq',
         'Sector': 'Technology',
-        'Industry': "Computer Hardware",
+        'Industry': 'Computer Hardware',
         'CEO': 'Timothy D. Cook'
     };
     return (
@@ -38,7 +38,7 @@ The HTML output of the above Component when it's rendered will be:
 
 ```html
 <div>
-    <div>Profile of: APPL</div>
+    <div>Profile of: AAPL</div>
     <div>
         <div>Company Name: Apple Inc.</div>
         <div>Exchange: Nasdaq</div>
@@ -49,7 +49,7 @@ The HTML output of the above Component when it's rendered will be:
 </div>
 ```
 
-Well that's a handful, so let's review what's happening here. We have a `ticker` variable assigned to a value `APPL` and an object `companyProfileInfo` that has company profile. Inside the JSX (inside the `return` statement) we have a `div` enclosing everything. In JSX, **a component must return one and only one enclosing tag**. That tag can have as many children as it wants.
+Well that's a handful, so let's review what's happening here. We have a `ticker` variable assigned to a value `AAPL` and an object `companyProfileInfo` that has company profile. Inside the JSX (inside the `return` statement) we have a `div` enclosing everything. In JSX, **a component must return one and only one enclosing tag**. That tag can have as many children as it wants.
 ```jsx
 // ❌ This is illegal in React since the return has more than one tag.
 return ( 
@@ -78,7 +78,7 @@ return (
 )
 ```
 
-Going back to the company profile example, the first child of the enclosing `div` is another `div`. Inside that `div` we used curly braces to display the `ticker` alongside `Profile of:`. Remember curly braces is how we inject Javascript code inside JSX. So here the `ticker` varaible would be evaluated and rendered inside that `div` tag. Then we have another `div` as a second children of the enclosing parent. Inside this `div` we again have curly braces and we executed some Javascript code. In this case we mapped each key of the `companyProfileInfo` object to a `div` element. The content of this `div` is again evaluated using another curly braces like: `{key} : {companyProfileInfo[key]}`. What we did here is told React that for each key of the `companyProfileInfo` object we want to render a `div` whose content would be the `key` followed by a colon `:` followed by corresponding value for the key on the object (`companyProfileInfo[key]`).
+Going back to the company profile example, the first child of the enclosing `div` is another `div`. Inside that `div` we used curly braces to display the `ticker` alongside `Profile of:`. Remember curly braces is how we inject Javascript code inside JSX. So here the `ticker` variable would be evaluated and rendered inside that `div` tag. Then we have another `div` as a second children of the enclosing parent. Inside this `div` we again have curly braces and we executed some Javascript code. In this case we mapped each key of the `companyProfileInfo` object to a `div` element. The content of this `div` is again evaluated using another curly braces like: `{key} : {companyProfileInfo[key]}`. What we did here is told React that for each key of the `companyProfileInfo` object we want to render a `div` whose content would be the `key` followed by a colon `:` followed by corresponding value for the key on the object (`companyProfileInfo[key]`).
 
 Let's write some code here to hit the nail on the head. Please open the exercise file and follow the instructions.
 

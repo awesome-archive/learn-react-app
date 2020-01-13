@@ -20,7 +20,7 @@ Ex:
 - `onselect` => `onSelect`
 - `onchange` => `onChange`
 
-2. With HTML we would pass a string as a value of the attribute but in JSX we passed actual function. For ex contrast above `button` in JSX to the following HTML equivalent:
+2. With HTML we would pass a string as a value of the attribute but in JSX we passed actual function. For example compare the above `button` in JSX to the following HTML equivalent:
 
 ```html
 <button onclick="handleClick()"></button>
@@ -31,7 +31,7 @@ Ex:
 When React invokes the event-handler, it provides a [SyntheticEvent](https://reactjs.org/docs/events.html) as an argument. Not to worry about any of the details, it's a wrapper around browser's native event and it has the same interface as the native event.
 
 ```jsx
-function ClickableButton(props){
+function InputComponent(props){
     //callback function that's called when input changes
     //It gets synthetic event as an argument
     //SyntheticEvent has interface just like the native browser event
